@@ -38,11 +38,11 @@ public class Steps {
             System.out.println("Login successful");
         }}
     @And("^compose the email$")
-    public void compose(String to, String subject,String message){
+    public void compose(){
         dr.findElement(By.xpath("//div[2]/div[2]/div[1]/div[1]/div/div")).click();
-        dr.findElement(By.xpath("//*[@id=\":vy\"]")).sendKeys(to);//to whose email we want to send their email is taken as to
-        dr.findElement(By.xpath("//*[@id=\":s2\"]")).sendKeys(subject);//subject of email
-        dr.findElement(By.xpath("//*[@id=\":t9\"]")).sendKeys(message);//message to send
+        dr.findElement(By.xpath("//*[@id=\":vy\"]")).sendKeys("to-email");//to whose email we want to send their email is taken as to
+        dr.findElement(By.xpath("//*[@id=\":s2\"]")).sendKeys("Incubyte");//subject of email
+        dr.findElement(By.xpath("//*[@id=\":t9\"]")).sendKeys("Automation QA test for Incubyte");//message to send
         dr.findElement(By.xpath("//*[@id=\":rs\"]")).click();//click this to send
 
     }
